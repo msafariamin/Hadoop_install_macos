@@ -20,14 +20,18 @@ STEP 3: Configure Hadoop:
 
 Edit hadoop-env.sh, the file can be located at /usr/local/Cellar/hadoop/3.1.2/libexec/etc/hadoop/hadoop-env.sh where 3.1.2 is the hadoop version. Change the line
 
+`
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true" to:
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 (this line is to have "ResourceManager" in the pack and to launch "start-yarn.sh")
+`
 
 AND
 
+`
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kdc=" Edit Core-site.xml, The file can be located at /usr/local/Cellar/hadoop/3.1.2/libexec/etc/hadoop/core-site.xml add below config
+`
 
 <property>
 <name>hadoop.tmp.dir</name>
